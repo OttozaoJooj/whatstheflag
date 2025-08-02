@@ -12,6 +12,11 @@ class FlagModel{
         $stmt = $conn->query('SELECT * FROM users;');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function addFlag(){
+        
+        
+    }
     
 
     
