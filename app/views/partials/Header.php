@@ -12,8 +12,8 @@
         <nav class="navbar navbar-expand-lg d-flex align-items-center  justify-content-between">
             <a class="navbar-brand fs-2 fw-bold ">Advinhe</a>
             <ul class="navbar-nav d-flex align-items-center flex-row column-gap-3">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Add Country</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/add-flag">Add Flag</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Search Flag</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">About</a></li>
 
