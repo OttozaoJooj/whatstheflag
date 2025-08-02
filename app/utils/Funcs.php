@@ -3,9 +3,9 @@
 namespace app\utils;
 
 class Funcs{
-    public static function dd($value){
+    public static function dd(...$value){
         echo '<pre>';
-        var_dump($value);
+        var_dump(...$value);
         echo '</pre>';
         die();
     }
