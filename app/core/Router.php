@@ -6,6 +6,7 @@ class Router{
     private array $routes = [
         '/' => 'Home',
         '' => 'Home',
+        '/home' => 'Home',
         'add-flag' => 'AddFlag',
         'search-flag' => 'SearchFlag'
         
