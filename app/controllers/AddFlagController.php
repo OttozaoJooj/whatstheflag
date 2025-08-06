@@ -8,7 +8,7 @@ use app\handlers\RedirectHandler;
 use app\utils\Funcs;
 
 class AddFlagController{
-    public function show(){
+    public function show($params = null){
         $title = 'Add Flag';
         require_once('../app/views/AddFlagView.php');
     }
