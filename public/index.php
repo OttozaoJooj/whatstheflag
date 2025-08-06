@@ -12,7 +12,9 @@ $REQUEST_METHOD = $_SERVER['REQUEST_METHOD'];
 
 $REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-$REQUEST_PARAM = $_POST;
+$REQUEST_POST_PARAM = $_POST;
+
+$REQUEST_GET_PARAM = $_GET;
 
 $REQUEST_FILES = $_FILES;
 
@@ -27,11 +29,11 @@ $controller = new ($namespaceController.$controllerName.'Controller');
 
 if($REQUEST_METHOD == 'POST'){
     //Funcs::dd($REQUEST_FILES);
-    $controller->create($REQUEST_PARAM, $REQUEST_FILES);
+    $controller->create($REQUEST_POST_PARAM, $REQUEST_FILES);
     
 } else{
     
-    $controller->show();
+    $controller->show($REQUEST_GET_PARAM);
 }
 
 
