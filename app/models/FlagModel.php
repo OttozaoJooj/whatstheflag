@@ -13,9 +13,28 @@ class FlagModel{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function addFlag(){
+    public function addFlag($name, $code, $nameFile) : bool{
+        $conn = Database::conn();
         
-        
+        $stmt = $conn->prepare('INSERT INTO flags(country_name, code, flag_filename, fk_users) VALUES (? , ? , ?, 1);');
+
+        $stmt->bindParam(1, $name);
+        $stmt->bindParam(2, $code);
+        $stmt->bindParam(3, $nameFile);
+
+        if(!$stmt->execute()){
+            die('Erro ao executar o SLQ');
+        }
+
+        return true;
+
+
+
+
+
+
+
+
     }
     
 

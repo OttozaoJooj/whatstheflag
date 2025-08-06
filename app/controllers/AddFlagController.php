@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\FlagModel;
+use app\handlers\FileHandler;
+use app\handlers\RedirectHandler;
 use app\utils\Funcs;
-use Exception;
 
 class AddFlagController{
     public function show(){
@@ -13,17 +15,26 @@ class AddFlagController{
 
     public function create($params, $files){
         $flagFile = $files['flag_filename'];
+
         $name = $params['name'];
         $code = $params['code'];
 
-        $filename = $flagFile['name'];
-        $pathTemp = $flagFile['tmp_name'];
+        $fileHandler = new FileHandler($flagFile); 
 
-        $fileTypesAllowed = ['image/png', 'image/jpeg', 'image/webp'];
+        if($fileHandler->isTypeFileAllowed() && $fileHandler->inLimiteOfMB()){
+            
+            $flagModel = new FlagModel;
 
-        throw new Exception('Salada');
+            $flagModel->addFlag($name, $code, $fileHandler->getNameFile());            
+            
+            if(!$fileHandler->moveUploadedFile('C:/xampp/htdocs/blog/app/uploads/'.$fileHandler->getNameFile())){
+                die('Erro ao mover arquivo.');
+            }
+        }
 
+        RedirectHandler::redirect('http://localhost:8000/');
 
-        Funcs::dd($filename, $pathTemp );
+       
+        
     }
 }
