@@ -18,6 +18,8 @@ $REQUEST_GET_PARAM = $_GET;
 
 $REQUEST_FILES = $_FILES;
 
+//Funcs::dd($REQUEST_GET_PARAM);
+
 
 $router = new Router($REQUEST_URI);
 
@@ -27,14 +29,17 @@ $namespaceController = 'app\\controllers\\';
 
 $controller = new ($namespaceController.$controllerName.'Controller');
 
-if($REQUEST_METHOD == 'POST'){
-    //Funcs::dd($REQUEST_FILES);
+if($REQUEST_METHOD == 'POST' && $REQUEST_POST_PARAM){
     $controller->create($REQUEST_POST_PARAM, $REQUEST_FILES);
     
+} else if($REQUEST_METHOD == 'GET' && $REQUEST_GET_PARAM){
+    $controller->search($REQUEST_GET_PARAM);
+
 } else{
-    
-    $controller->show($REQUEST_GET_PARAM);
+    $controller->show();
+
 }
+
 
 
 Code::success();
