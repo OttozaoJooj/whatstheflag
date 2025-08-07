@@ -1,6 +1,8 @@
 <?php
 namespace app\core;
 
+use app\utils\Funcs;
+
 class Router{
 
     private array $routes = [
@@ -16,7 +18,7 @@ class Router{
 
     public function __construct($URI)
     {   
-        $this->routesByURI = explode('/', $URI);
+        $this->routesByURI = explode('/', parse_url($URI)['path']);
 
         // Remove first element
         array_shift($this->routesByURI);
