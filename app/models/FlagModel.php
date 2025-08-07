@@ -13,6 +13,10 @@ class FlagModel{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function searchFlagsByCountryNameOrCode($value){
+
+    }
+
     public function addFlag($name, $code, $nameFile) : bool{
         $conn = Database::conn();
         
