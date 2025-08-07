@@ -1,6 +1,13 @@
 <?php require_once('../app/views/partials/Header.php')?>
 
-    <div class="container mt-5 border border-2 py-5">
+    <div class="container mt-5 border border-2 py-3">
+        <div class="mb-3">
+            <form class="w-25 ms-auto">
+                <label for="search-flag" class="form-label fw-bold">Search Flag:</label>
+                <input type="text" name="value-search" id="search-flag" class="form-control">
+
+            </form>
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -20,5 +27,6 @@
 
         </table>
     </div>
-    
+
+    <script src="static/js/SearchFlagAjax.js"></script>    
 <?php require_once('../app/views/partials/Footer.php')?>
