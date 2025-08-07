@@ -3,17 +3,19 @@
 namespace app\controllers;
 
 use app\models\FlagModel;
+use app\utils\Funcs;
 
 class SearchFlagController{
-    public function show($params = null){
+    public function show(){
         $title = 'Search Flag';
-        if(!$params){
-            $flagModel = new FlagModel;
-            $allFlags = $flagModel->getAllFlags();
+        
+        $flagModel = new FlagModel;
+        $allFlags = $flagModel->getAllFlags();
 
-            require_once('../app/views/SearchFlagView.php');
+        require_once('../app/views/SearchFlagView.php');
+    }
 
-
-        }
+    public function search($params){
+        
     }
 }
