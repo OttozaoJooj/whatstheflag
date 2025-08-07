@@ -7,9 +7,9 @@ use PDO;
 
 class FlagModel{
     
-    public function getAllCodeFlags(){
+    public function getAllFlags(){
         $conn = Database::conn();
-        $stmt = $conn->query('SELECT * FROM users;');
+        $stmt = $conn->query('SELECT * FROM flags;');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
