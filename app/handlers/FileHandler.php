@@ -11,7 +11,8 @@ class FileHandler{
     private array $typeFileAllowed = [
         'image/png',
         'image/jpeg',
-        'image/webp'
+        'image/webp',
+        'image/svg+xml'
     ];
     private int $limiteOfMB = 5;
 
