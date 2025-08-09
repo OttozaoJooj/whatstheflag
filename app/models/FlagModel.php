@@ -42,19 +42,5 @@ class FlagModel{
         }
 
         return true;
-
-
-
-
-
-
-
-
     }
-    
-
-    
 }
-
-
-?>
