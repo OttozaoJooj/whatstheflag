@@ -16,6 +16,12 @@ class SearchFlagController{
     }
 
     public function search($params){
-        
+        $flagModel = new FlagModel;
+
+        $searchFlagsData = $flagModel->searchFlagsByCountryNameOrCode($params['search-value']);
+
+        echo json_encode($searchFlagsData);
+
+
     }
 }
