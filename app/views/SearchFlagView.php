@@ -21,7 +21,7 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="container-data-flags">
                 <?php require_once('../app/views/components/DataFlagComponent.php');?>
             </tbody>
 
