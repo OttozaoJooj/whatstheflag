@@ -14,6 +14,17 @@ class FlagModel{
     }
 
     public function searchFlagsByCountryNameOrCode($value){
+        $valueFormated = "%$value%";
+        $conn = Database::conn();
+        $stmt = $conn->prepare("SELECT * FROM flags WHERE country_name LIKE ? OR code LIKE ?;");
+        $stmt->bindParam(1, $valueFormated);
+        $stmt->bindParam(2, $valueFormated);
+
+        if(!$stmt->execute()){
+            die('Erro ao executar o SLQ');
+        }
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     }
 
